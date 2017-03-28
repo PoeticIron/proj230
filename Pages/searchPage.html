@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<link href="\proj230\CSS\sitewide.css" rel="stylesheet"></a>
-	<title>Page Title</title>
+		<link href="sitewide.css" rel="stylesheet">
+		<title>Page Title</title>
 	</head>
 	<body>
 
@@ -12,10 +12,28 @@
 		</header>
 		</div>
 		
-		<div class = "Navigation Bar">
-			<nav>
-			umm ya
-			</nav>
+		<div class = "nav">
+		<a href="searchPage.html">Search</a><a href="resultsPage.html">Results</a><a href="registrationPage.html">Registration</a><a href="itemPage.html">Item</a>  
 		</div>
+
+		<div class = "search">
+			<form action="resultsPage.html">
+				Name:
+				<input type="text" name="Name">
+				<select>
+					<option value="default">Suburb</option>
+					<option value="default">Suburb1</option>
+					<option value="default">Suburb2</option>
+					<option value="default">Suburb3</option>
+				</select>
+				<input type="submit" value="Submit"><br>
+				<input type="radio" name="stars" value="1">
+				<input type="radio" name="stars" value="2">
+				<input type="radio" name="stars" value="3">
+				<input type="radio" name="stars" value="4">
+				<input type="radio" name="stars" value="5">
+			</form>
+		</div class = "search">
+		
 	</body>
 </html>
