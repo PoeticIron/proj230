@@ -1,0 +1,13 @@
+body {
+	font-size:18px;
+	font-family: "Arial", Georgia, Serif;
+	background-color:#00FFFF;
+}
+
+.form {
+	font-weight: bold;
+}
+.forminfo{
+	font-weight: normal;
+	font-variant: small-caps;
+}
