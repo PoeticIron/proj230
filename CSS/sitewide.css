@@ -7,6 +7,9 @@ body {
 .form {
 	font-weight: bold;
 }
+.form input{
+	width: 150%;
+}
 .forminfo{
 	font-weight: normal;
 	font-style: italic;
@@ -16,4 +19,11 @@ body {
 	font-variant: small-caps;
 	font-size:32px;
 	font-weight:bold;
+}
+.info{
+	float: left;
+	width: 600px;
+}
+.inputs{
+	float:left;
 }
