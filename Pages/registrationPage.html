@@ -3,14 +3,33 @@
 <title>Register an Account</title>
 <head>
 <link href="\proj230\CSS\sitewide.css" rel="stylesheet"></a>
+<script>
+function registerCheck() {
+    var x = document.forms["registerForm"]["FName"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+}
+</script>
 </head>
 <body>
-		<div class="Topfield">
-			<div class="Title">New User Registration</div>
-			Please fill out the form below and press 'submit' when ready.
+		<div class = "Header">
+		<header>
+		<h1>JimmyBots Park Reviews</h1>
+		</header>
+		</div>
+		<div class = "nav">
+		<a href="searchPage.html">Search</a><a href="resultsPage.html">Results</a><a href="registrationPage.html">Registration</a><a href="itemPage.html">Item</a>  
+		</div>
+		<div class="Title">
+			New User Registration<br>
+			<div class="Subtitle">
+			Please fill out the form below and press 'submit' when ready.</div>
 		</div>
 		<div class="form">
-		<div class="info">
+		<form name="registerForm" onsubmit="return registerCheck()" action="registrationPage.html" method="post">
+		<div class="leftcontent">
 
 		Given Name/s:<br>
 		Family Name:<br>
@@ -19,14 +38,16 @@
 				Usernames must be between 5 and 20 characters.
 				</div>
 		Email:<br>
+				<div class="forminfo">
+		Your email may be required for account confirmation. </div>
 		Confirm Email:<br>
+		<input type="submit">
 		</div>
-		<div class="inputs">
-		<form action="registrationPage.html" method="post">
+		<div class="rightcontent">
 		<input type="text" name="FName"><br>
 		<input type="text" name="LName"><br>
 		<input type="text" name="Username"><br><br>
-		<input type="text" name="Email"><br>
+		<input type="text" name="Email"><br><br>
 		<input type="text" name="confEmail"><br>
 		</div>
 		</form>

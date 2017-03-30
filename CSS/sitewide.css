@@ -1,12 +1,15 @@
 body {
 	font-size:18px;
 	font-family: "Arial", Georgia, Serif;
-	background-color:#00FFFF;
+	background-color:#DDDDDD;
 	float: center;
+	margin-left:100px;
+	margin-right:100px;
 }
 
 header {
     height: 90px;
+    line-height:90px;
 	text-align: center;
 	background-color: #003399;
 	color: white; 
@@ -18,16 +21,17 @@ div.nav {
 	padding: 10px;
 	border:1px solid black;
 	background-color: #CCCCFF;
-	width: 180px;
+	width: auto;
 	right: 50%;
 	
 } 
 
 div.nav a {
 	height: 40px;
-	padding-top: 10px;
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-top: 6px;
+	padding-left: 80px;
+	padding-right: 80px;
+	padding-bottom:6px;
 	text-align: center;
 	font-size:12pt;
 	font-weight: bold;
@@ -50,8 +54,25 @@ div.search {
 
 .form {
 	font-weight: bold;
+	line-height:30px;
 }
 .forminfo{
 	font-weight: normal;
-	font-variant: small-caps;
+	font-style:italic;
+}
+.leftcontent{
+	float:left;
+}
+.rightcontent{
+	float:left;
+	width:600px;
+}
+.rightcontent input{
+	width:300px;
+}
+.Title{
+	font-size:160%;
+}
+.Title .Subtitle{
+	font-size:80%;
 }
