@@ -52,6 +52,28 @@ div.search {
 	float: center;	
 }
 
+
+input[type=radio ]:not(old){
+  width   : 28px;
+  margin  : 0;
+  padding : 3px;
+  opacity : 0;
+}
+
+input[type=radio ]:not(old) + label{
+  display      : inline-block;
+  margin-left  : -28px;
+  padding-left : 28px;
+  background   : url('star.png') no-repeat 0 0;
+  line-height  : 24px;
+}
+
+input[type=radio]:not(old):checked + label{
+  background-position : 0 -48px;
+  background   : url('goldstar.png') no-repeat 0 0;
+}
+
+
 .form {
 	font-weight: bold;
 	line-height:30px;
