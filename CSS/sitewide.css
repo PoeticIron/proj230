@@ -1,7 +1,7 @@
 body {
 	font-size:18px;
 	font-family: "Arial", Georgia, Serif;
-	background-color:#DDDDDD;
+	background-color:#DDD;
 	float: center;
 	margin-left:100px;
 	margin-right:100px;
@@ -11,7 +11,7 @@ header {
     height: 90px;
     line-height:90px;
 	text-align: center;
-	background-color: #003399;
+	background-color: #093;
 	color: white; 
 }
 
@@ -20,7 +20,7 @@ div.nav {
 	margin: 0px;
 	padding: 10px;
 	border:1px solid black;
-	background-color: #CCCCFF;
+	background-color: #CFC;
 	width: auto;
 	right: 50%;
 	
@@ -29,24 +29,22 @@ div.nav {
 div.nav a {
 	height: 40px;
 	padding-top: 6px;
-	padding-left: 80px;
-	padding-right: 80px;
+	padding-left: 5%;
+	padding-right: 5%;
 	padding-bottom:6px;
 	text-align: center;
 	font-size:12pt;
 	font-weight: bold;
-	background-color: #003399;
+	background-color: #093;
 	color: white;
 	border-style: outset;
 	border-width: 4px;
 	text-decoration: none;
 } 
-
 div.nav  a:hover {
-	background-color: blue;
+	background-color: #ABA;
 	text-decoration: underline;
 } 
-
 div.search {
 	padding-top: 5px;
 	float: center;	
@@ -134,13 +132,15 @@ input[type=radio]:not(old):checked + label{
 }
 .rightcontent{
 	float:left;
-	width:600px;
+	width:45%;
+	margin-left:10%;
 }
 .rightcontent input{
-	width:300px;
+	width:75%;
 }
 .Title{
 	font-size:160%;
+	text-align:center;
 }
 .Title .Subtitle{
 	font-size:80%;
