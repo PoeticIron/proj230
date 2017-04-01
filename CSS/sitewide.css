@@ -53,6 +53,53 @@ div.search {
 }
 
 
+div.parkName{
+	font-weight: bold;
+	line-height:30px;
+	padding-top: 50px;
+	font-size: 50px;
+	text-align: center;
+}
+
+div.parkStuff nav{
+	float: left;
+    max-width: 160px;
+    margin: 0;
+	padding-top: 50px;
+    padding-left: 40%;
+	transform: translate(-50%, 0);
+}
+
+div.parkStuff article{
+	transform: translate(-17%, 0);
+    padding-top: 80px;
+    overflow: hidden;
+	text-align: center;
+	font-size: 20px;
+}
+
+div.reviews {
+	padding-top: 150px;
+	text-align: center;
+}
+
+div.rev1 {
+	padding: -2em;
+	border: 1px solid black;
+}
+
+div.rev2 {
+	padding: -2em;
+	border: 1px solid black;
+}
+
+div.rev3 {
+	padding: -2em;
+	border: 1px solid black;
+}
+
+
+
 input[type=radio ]:not(old){
   width   : 28px;
   margin  : 0;
