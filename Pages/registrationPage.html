@@ -5,15 +5,42 @@
 <link href="\proj230\CSS\sitewide.css" rel="stylesheet"></a>
 <script>
 function registerCheck() {
-    var x = document.forms["registerForm"]["FName"].value;
-    if (x == "") {
-        alert("Name must be filled out");
-        return false;
+    var fn = document.forms["registerForm"]["FName"].value;
+    var ln = document.forms["registerForm"]["LName"].value;
+    var em = document.forms["registerForm"]["Email"].value;
+    var ce = document.forms["registerForm"]["confEmail"].value;
+
+    var result = true;
+    if (fn == "" | fn==null) {
+        document.getElementById("errFN").innerHTML="Please input a valid name!<br /> ";
+        document.getElementById("fnbr").innerHTML="<br />";
+        result = false;
     }
+    if (ln == "" | ln==null) {
+        document.getElementById("errLN").innerHTML="Please input a valid name <br />";
+        document.getElementById("lnbr").innerHTML="<br />";
+        result = false;
+    }
+    if (!(em.includes("@")) | (em.includes("."))) {
+        document.getElementById("errEM").innerHTML="Please ensure that your email is valid (contains at least an \"@\" and \".\" symbol)<br />";
+        document.getElementById("embr").innerHTML="<br />";
+        result = false;
+    }
+    if (em == "" | em==null) {
+        document.getElementById("errEM").innerHTML="Please input a valid email! <br />";
+        document.getElementById("embr").innerHTML="<br />";
+        result = false;
+    }
+    if (true){
+		document.getElementById("errCE").innerHTML="Please ensure that these fields match<br />";
+    	document.getElementById("cebr").innerHTML = "<br />";
+    	result=false;
+    }
+	return result;
 }
 </script>
 </head>
-<body>
+<body id="body">
 		<div class = "Header">
 		<header>
 		<h1>JimmyBots Park Reviews</h1>
@@ -31,24 +58,24 @@ function registerCheck() {
 		<form name="registerForm" onsubmit="return registerCheck()" action="registrationPage.html" method="post">
 		<div class="leftcontent">
 
-		Given Name/s:<br>
-		Family Name:<br>
+		Given Name/s:<br><div class="errmsg" id="errFN" ></div>
+		Family Name:<br><div class="errmsg" id="errLN"></div>
 		Your Username:
 				<div class="forminfo">
 				Usernames must be between 5 and 20 characters.
 				</div>
-		Email:<br>
+		Email:<br><div class="errmsg" id="errEM"></div>
 				<div class="forminfo">
 		Your email may be required for account confirmation. </div>
-		Confirm Email:<br>
+		Confirm Email:<br><div class="errmsg" id="errCE"></div>
 		<input type="submit">
 		</div>
 		<div class="rightcontent">
-		<input type="text" name="FName"><br>
-		<input type="text" name="LName"><br>
-		<input type="text" name="Username"><br><br>
-		<input type="text" name="Email"><br><br>
-		<input type="text" name="confEmail"><br>
+		<input type="text" name="FName"><br><div id=fnbr></div>
+		<input type="text" name="LName"><br><div id=lnbr></div>
+		<input type="text" name="Username"><br><br><div id=usbr></div>
+		<input type="text" name="Email"><br><br><div id=embr></div>
+		<input type="text" name="confEmail"><br><div id=cebr></div><br>
 		</div>
 		</form>
 		</div>

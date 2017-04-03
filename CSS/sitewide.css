@@ -1,10 +1,10 @@
 body {
-	font-size:18px;
+	font-size:16px;
 	font-family: "Arial", Georgia, Serif;
 	background-color:#DDD;
 	float: center;
-	margin-left:100px;
-	margin-right:100px;
+	margin-left:5%;
+	margin-right:5%;
 }
 
 header {
@@ -118,6 +118,10 @@ input[type=radio]:not(old):checked + label{
   background   : url('goldstar.png') no-repeat 0 0;
 }
 
+.errmsg{
+	color: #E66;
+	font-size:90%;
+}
 
 .form {
 	font-weight: bold;
@@ -129,14 +133,16 @@ input[type=radio]:not(old):checked + label{
 }
 .leftcontent{
 	float:left;
+	width:45%;
+	margin-left:1.2%;
 }
 .rightcontent{
 	float:left;
+	
 	width:45%;
-	margin-left:10%;
 }
 .rightcontent input{
-	width:75%;
+	width: 100%;
 }
 .Title{
 	font-size:160%;
