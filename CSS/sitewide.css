@@ -4,10 +4,12 @@ body {
 	font-family: "Arial", Georgia, Serif;
 	background-color:#DDD;
 	float: center;
+	width:100%;
+}
+div.content{
 	margin-left:5%;
 	margin-right:5%;
 }
-
 header {
     height: 90px;
     line-height:90px;
@@ -15,7 +17,17 @@ header {
 	background-color: #093;
 	color: white; 
 }
-
+div.footer{
+	line-height:150%;
+	position: absolute;
+	width:100%;
+	bottom:0;
+	left:0;
+	clear:both;
+	font-size:80%;
+	background-color:#C6C6C6;
+	text-align:center;
+}
 div.nav {
 	text-align: center;
 	margin: 0px;
