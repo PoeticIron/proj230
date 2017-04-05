@@ -109,8 +109,6 @@ div.rev3 {
 	border: 1px solid black;
 }
 
-
-
 div.stars {
   width: 270px;
   display: inline-block;
@@ -155,20 +153,17 @@ label.star:before {
 .form {
 	font-weight: bold;
 	line-height:30px;
+	margin-left:1.2%;
 }
 .forminfo{
 	font-weight: normal;
 	font-style:italic;
+	font-size:90%;
 }
-.leftcontent{
-	float:left;
-	width:45%;
-	margin-left:1.2%;
-}
-.rightcontent{
-	float:left;
-	
-	width:45%;
+.field input{
+	float:right;
+	margin-right:10%;
+	width:40%;
 }
 .rightcontent input{
 	width: 100%;
