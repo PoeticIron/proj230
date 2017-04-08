@@ -3,8 +3,9 @@
 <title>Search Results</title>
 <head>
 <link href="\proj230\CSS\sitewide.css" rel="stylesheet"></a>
+<script type="text/javascript" src="\proj230\JS\scripts.js"></script>
 </head>
-<body>
+<body onload="showPosition(-27.38006149,153.0387005)">
 	<div class="content">
 		<div class = "Header">
 		<header>
@@ -16,15 +17,15 @@
 		</div>
 	
 		<div class = "parkName">
-			Name of park goes here
+			7TH BRIGADE PARK
 		</div>
 		
 		<div class = "parkStuff">
 			<nav>
-				<img src="https://arlingtonva.s3.dualstack.us-east-1.amazonaws.com/wp-content/uploads/sites/17/2014/02/bluemont_open_space.jpg" style="width:500px;height:375px;">
+				<div id="mapholder"></div>
 			</nav>
 			<article>
-				<h3><b>Location:<b> 1234 fake street,<br> faker, Queensland, 1000<h3><br>
+				<h3><b>Location:<b> HAMILTON RD,<br> CHERMSIDE<h3><br>
 				average rating of the park:<br>
 					2 <img src="goldstar.png">
 			</article>
@@ -76,5 +77,6 @@
 			</div>
 		</div>
 		</div>
+		<div class = "footer">© 2017    ExampleCorp. Terms of Service can be found nowhere.</div>
 </body>
 </html>
