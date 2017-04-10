@@ -88,3 +88,13 @@ function showError(error) {
             break;
     }
 }
+
+function addLink(){
+    var everyCell = document.getElementsByTagName('td')
+    for(var i =2, cell; cell=everyCell[i];i++){
+        if((i+3) % 4 == 0){
+            var pName = cell.innerHTML;
+            cell.innerHTML = "<a href=\\proj230\\Pages\\itemPage.html>" + pName + "</a>"
+        }
+    }
+}
