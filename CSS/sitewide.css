@@ -60,11 +60,27 @@ div.nav  a:hover {
 	background-color: #ABA;
 	text-decoration: underline;
 } 
+
 div.search {
-	padding-top: 5px;
-	float: center;	
+	min-width: 1180px;
+	height: 10em;
+    position: relative;
+	margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
 }
 
+div.search input[type=submit] {
+    padding:5px 15px; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
 
 div.parkName{
 	font-weight: bold;
