@@ -2,7 +2,7 @@
 <html>
 	<head>
 	<meta charset="UTF-8">
-
+		<script type="text/javascript" src="\proj230\JS\scripts.js"></script>
 		<link href="/proj230/CSS/sitewide.css" rel="stylesheet">
 		<title>Page Title</title>
 	</head>
@@ -17,11 +17,9 @@
 		<div class = "nav">
 		<a href="searchPage.html">Search</a><a href="resultsPage.html">Results</a><a href="registrationPage.html">Registration</a><a href="itemPage.html">Item</a>  
 		</div>
-
 		<div class = "parkName">
 			Search for Parks.
 		</div>
-
 		<div class = "search">
 			<form action="resultsPage.html" method="post">
 				Name:
@@ -51,6 +49,9 @@
 			</form>
 			</div>
 			</form>
+			<button type="button" onclick="getLocation();">Find My Location </button>
+			<button type='button' onclick="location.href='resultsPage.html';">Use My Location </button>
+			<div id="mapInfo"></div><br><div id="mapholder"></div>
 		</div class = "search">
 		</form>
 		</div>

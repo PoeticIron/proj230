@@ -66,7 +66,7 @@ function showPosition(latitude, longitude) {
     var latlon = latitude + "," + longitude;
 
     var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
-    +latlon+"&zoom=14&size=400x300&sensor=false&key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU";
+    +latlon+"&zoom=14&size=400x300&sensor=false&key=AIzaSyCvlWDjG3g5Aim2WGLsYKBH0qKnBSaAE74";
     document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
 }
 //To use this code on your website, get a free API key from Google.
@@ -97,4 +97,12 @@ function addLink(){
             cell.innerHTML = "<a href=\\proj230\\Pages\\itemPage.html>" + pName + "</a>"
         }
     }
+}
+
+function getLocation(){
+    navigator.geolocation.getCurrentPosition(displayMyPosition);
+}
+function displayMyPosition(position){
+    showPosition(position.coords.latitude, position.coords.longitude);
+    document.getElementById('mapInfo').innerHTML= "Your Coordinates: \n Latitude: " + position.coords.latitude + ", Longitude: " + position.coords.longitude;
 }
