@@ -9,10 +9,9 @@ body {
 	width:100%;
 }
 div.content{
-	margin-left: 5%;
+	margin-left:5%;
 	margin-right:5%;
 }
-
 header {
     height: 90px;
     line-height:90px;
@@ -66,6 +65,7 @@ div.nav  a:hover {
 div.search {
 	min-width: 1180px;
 	height: 10em;
+    position: relative;
 	margin: 0;
     position: absolute;
     top: 50%;
@@ -82,7 +82,6 @@ div.search input[type=submit] {
     -webkit-border-radius: 5px;
     border-radius: 5px; 
 }
-
 
 div.page{
 	opacity: 0.9;
