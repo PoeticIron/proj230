@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
-<title>Item Example Page</title>
+<title>Search Results</title>
 <head>
-<link href="\proj230\CSS\sitewide.css" rel="stylesheet"></a>
+<meta charset="UTF-8">
+
+<link href="\proj230-master\CSS\sitewide.css" rel="stylesheet"></a>
+<script type="text/javascript" src="\proj230\JS\scripts.js"></script>
 </head>
-<body>
+<body onload="showPosition(-27.38006149,153.0387005)">
+	<div class="content">
 		<div class = "Header">
 		<header>
 		<h1>JimmyBots Park Reviews</h1>
@@ -12,5 +16,76 @@
 		</div>
 		<div class = "nav">
 		<a href="searchPage.html">Search</a><a href="resultsPage.html">Results</a><a href="registrationPage.html">Registration</a><a href="itemPage.html">Item</a>  
-		</div></body>
+		</div><!--END STANDARD HEADER, BEGIN CONTENT -->
+		<br>
+		<div class="page">
+		<div class = "parkName">
+			7TH BRIGADE PARK
+		</div>
+		
+		<div class = "parkStuff">
+			<nav>
+				<div id="mapholder"></div>
+			</nav>
+			<article>
+				<h3><b>Location:</b> HAMILTON RD,<br> CHERMSIDE<h3><br>
+				average rating of the park:<br>
+					2 <img src="goldstar.png">
+			</article>
+		</div>
+		<div class = "reviews">
+			<h1>User Reviews</h1>
+			<hr size="1"><br>
+			Write Your Review of This Park.<br><br>
+			<input type="text" name="FName" size = "100"><br><br>
+			What rating would you give this park?   
+			<div class="stars">
+			<form action="">
+				<form action="stars">
+				<input class="star star-5" id="star-5" type="radio" name="star"/>
+				<label class="star star-5" for="star-5"></label>
+				<input class="star star-4" id="star-4" type="radio" name="star"/>
+				<label class="star star-4" for="star-4"></label>
+				<input class="star star-3" id="star-3" type="radio" name="star"/>
+				<label class="star star-3" for="star-3"></label>
+				<input class="star star-2" id="star-2" type="radio" name="star"/>
+				<label class="star star-2" for="star-2"></label>
+				<input class="star star-1" id="star-1" type="radio" name="star"/>
+				<label class="star star-1" for="star-1"></label>
+				</form>
+				<input type="submit" name="submit"/>
+			</form>
+			</div>
+			
+			<br>
+			<br>
+			<div class = "rev1">
+				<p>
+				Bob: Ah yes, this was a decent park and did everything a park should do.<br>
+				5 stars but actually 3.<p>
+			</div>
+			<p>
+			<div class = "rev2">
+				<p>
+				Jimmy: It's a park. not much i can say about it. i guess they have working<br>
+				toilets. that was nice of them.<br>
+				2 stars.<p>
+			</div>
+			<p>
+			<div class = "rev3">
+				<p>
+				Jenny: This park was a park. i dunno. Just writing fluff right now.<br>
+				2 stars.
+				</p>
+			</div>
+		</div>
+		</p>
+		</p>
+		</p>
+		</p>
+		</p>
+		</div>
+		</div>
+		<div class = "footer">© 2017    ExampleCorp. Terms of Service can be found nowhere.</div>
+</body>
 </html>

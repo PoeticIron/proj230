@@ -1,9 +1,15 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400);
 body {
+	background-image: url("http://i.imgur.com/4WXZQWT.jpg");
+	background-size: 1920px, 1080px;
+	min-width: 1024px;
 	font-size:16px;
 	font-family: "Arial", Georgia, Serif;
-	background-color:#DDD;
 	float: center;
-	margin-left:5%;
+	width:100%;
+}
+div.content{
+	margin-left: 5%;
 	margin-right:5%;
 }
 
@@ -14,7 +20,18 @@ header {
 	background-color: #093;
 	color: white; 
 }
-
+div.footer{
+	line-height:150%;
+	position: fixed;
+	width:100%;
+	left:0;
+	right:0;
+	bottom:0;
+	clear:both;
+	font-size:80%;
+	background-color:#C6C6C6;
+	text-align:center;
+}
 div.nav {
 	text-align: center;
 	margin: 0px;
@@ -45,16 +62,43 @@ div.nav  a:hover {
 	background-color: #ABA;
 	text-decoration: underline;
 } 
+
 div.search {
-	padding-top: 5px;
-	float: center;	
+	min-width: 1180px;
+	height: 10em;
+	margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
 }
 
+div.search input[type=submit] {
+    padding:5px 15px; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+
+
+div.page{
+	opacity: 0.9;
+	margin-left: 5%;
+	margin-right:5%;
+	border-radius: 5px;
+	border-style: inset;
+	padding: 5%;
+    background-color: #f2f2f2;
+	padding-top: 5px;
+}
 
 div.parkName{
 	font-weight: bold;
 	line-height:30px;
-	padding-top: 50px;
+	padding-top: 25px;
 	font-size: 50px;
 	text-align: center;
 }
@@ -63,14 +107,14 @@ div.parkStuff nav{
 	float: left;
     max-width: 160px;
     margin: 0;
-	padding-top: 50px;
+	padding-top: 25px;
     padding-left: 40%;
 	transform: translate(-50%, 0);
 }
 
 div.parkStuff article{
 	transform: translate(-17%, 0);
-    padding-top: 80px;
+    padding-top: 45px;
     overflow: hidden;
 	text-align: center;
 	font-size: 20px;
@@ -96,27 +140,39 @@ div.rev3 {
 	border: 1px solid black;
 }
 
-
-
-input[type=radio ]:not(old){
-  width   : 28px;
-  margin  : 0;
-  padding : 3px;
-  opacity : 0;
+div.stars {
+  width: 270px;
+  display: inline-block;
+}
+ 
+input.star { display: none; }
+ 
+label.star {
+  float: right;
+  padding: 10px;
+  font-size: 36px;
+  color: #444;
+  transition: all .2s;
+}
+ 
+input.star:checked ~ label.star:before {
+  content: url(/proj230/Images/goldstar2.png);
+  color: #EE6;
+  transition: all .25s;
+  	display: inline-block;
+	width:32px;
+	height:32px;
 }
 
-input[type=radio ]:not(old) + label{
-  display      : inline-block;
-  margin-left  : -28px;
-  padding-left : 28px;
-  background   : url('star.png') no-repeat 0 0;
-  line-height  : 24px;
+label.star:hover { transform: rotate(-120deg) scale(1.2); }
+ 
+label.star:before {
+	display: inline-block;
+	width:32px;
+	height:32px;
+  content: url(/proj230/Images/star.png);
 }
 
-input[type=radio]:not(old):checked + label{
-  background-position : 0 -48px;
-  background   : url('goldstar.png') no-repeat 0 0;
-}
 
 .errmsg{
 	color: #E66;
@@ -126,20 +182,17 @@ input[type=radio]:not(old):checked + label{
 .form {
 	font-weight: bold;
 	line-height:30px;
+	margin-left:1.2%;
 }
 .forminfo{
 	font-weight: normal;
 	font-style:italic;
+	font-size:90%;
 }
-.leftcontent{
-	float:left;
-	width:45%;
-	margin-left:1.2%;
-}
-.rightcontent{
-	float:left;
-	
-	width:45%;
+.field input{
+	float:right;
+	margin-right:10%;
+	width:40%;
 }
 .rightcontent input{
 	width: 100%;
@@ -150,4 +203,23 @@ input[type=radio]:not(old):checked + label{
 }
 .Title .Subtitle{
 	font-size:80%;
+}
+
+table.results-table{
+	border-collapse: collapse;
+	border-spacing: 0px;
+	border-style:solid;
+	border-width:1px;
+	background-color:white;
+}
+table.results-table td{
+	border-style:solid;
+	border-width:1px;
+	text-transform:lowercase;
+	text-transform:capitalize;
+}
+table.results-table tr.head{
+	border-width:2px;
+	font-size:120%;
+	font-weight:bold;
 }
