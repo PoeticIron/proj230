@@ -1,0 +1,17 @@
+div.tripleNumber input{
+	width:13.3333333%;
+}
+input.date{
+	margin-right:0%;
+}
+input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button{
+	    -webkit-appearance: none;
+	    margin:0;
+}
+input[type=number]{
+	-moz-appearance:textfield;
+}
+input[type=checkbox]{
+	margin-right: calc(50% - 13px);
+	width:0px;
+}

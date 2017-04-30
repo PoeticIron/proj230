@@ -105,4 +105,6 @@ function getLocation(){
 function displayMyPosition(position){
     showPosition(position.coords.latitude, position.coords.longitude);
     document.getElementById('mapInfo').innerHTML= "Your Coordinates: \n Latitude: " + position.coords.latitude + ", Longitude: " + position.coords.longitude;
+    document.getElementById('lat').value= position.coords.latitude;
+    document.getElementById('lon').value=position.coords.longitude;
 }
