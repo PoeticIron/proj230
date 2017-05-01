@@ -1,6 +1,10 @@
 <?php 
 include 'head.php';
 echo '<table>';
+if(!($_SERVER["REQUEST_METHOD"]=="POST")){
+        header("Location: /proj230/pages/search.php");
+        exit();
+    }
 $searchType = $_POST["stype"];
 $lat = $_POST["lat"];
 $lon = $_POST["lon"];

@@ -37,12 +37,20 @@ div.nav {
 	text-align: center;
 	margin: 0px;
 	padding: 10px;
+	padding-top:20px;
+	padding-bottom:20px;
 	border:1px solid black;
 	background-color: #CFC;
 	width: auto;
 	right: 50%;
-	
 } 
+
+div.login{
+	color: #222;
+	margin:0;
+	padding:0;
+	background-color: #CFC;
+}
 
 div.nav a {
 	height: 40px;

@@ -1,6 +1,6 @@
 <?php 
 include 'head.php';
-//TO DO: check username and email in-usage, 
+//TO DO: check username and email in-usage,  
 $username = $fname = $lname = $pass = $confpass = $email = $confemail = $phno = $day = $mth = $year = $tnc = "";
 $userErr = $fnameErr = $lnErr = $passErr = $confPassErr = $emailErr = $confEmailErr = $phnoErr = $DOBErr = $TnCErr = "";
 $formVals = array($fname, $lname, $pass, $confpass, $email, $confemail, $phno, $day, $mth, $year, $tnc);
@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 		$errVals[9] = "You must accept the Terms and Conditions to register.";
 	}
 
-}
+
 function chckInp($val){
 	$val = trim($val);
 	$val = stripslashes($val);
@@ -80,7 +80,7 @@ if($hasErrors == "false"){
 $arr = $stmt->errorInfo();
 print_r($arr);
 }
-
+}
 ?>
 <link href="/proj230/CSS/registration.css" rel="stylesheet">
 <div class="Title">
