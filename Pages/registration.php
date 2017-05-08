@@ -1,6 +1,6 @@
 <?php 
 include 'head.php';
-//TO DO: check username and email in-usage,  
+//TO DO: check username and email in-usage,  salted hash brown passwords
 $username = $fname = $lname = $pass = $confpass = $email = $confemail = $phno = $day = $mth = $year = $tnc = "";
 $userErr = $fnameErr = $lnErr = $passErr = $confPassErr = $emailErr = $confEmailErr = $phnoErr = $DOBErr = $TnCErr = "";
 $formVals = array($fname, $lname, $pass, $confpass, $email, $confemail, $phno, $day, $mth, $year, $tnc);

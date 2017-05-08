@@ -9,7 +9,6 @@ session_start();
 <div class="content">
 <?php 
 if(empty($_SESSION["Username"])){
-	echo $_SESSION["Username"];
 	echo'<div class="nav"><div class="login">
 	<form name="login" action="login.php" method="post">
 	<input placeholder="Username" type="text" name="Username">
