@@ -7,6 +7,7 @@ session_start();
 </head><!--//Standard header, with reference to the javascript file with scripts, and the CSS stylesheet.-->
 <body>
 <div class="content">
+<<<<<<< HEAD
 <?php 
 if(empty($_SESSION["Username"])){
 	echo'<div class="nav"><div class="login">
@@ -19,6 +20,14 @@ if(empty($_SESSION["Username"])){
 	Welcome Back, '.$_SESSION["FirstName"].'
 	<input type="submit" value="Sign Out"></form></div>';
 }?>
+=======
+<div class = "Header">
+		<header>
+		<h1>JimmyBots Park Reviews</h1>
+		</header>
+</div>
+<div class="nav">
+>>>>>>> origin/master
 <a href="search.php">Search</a><a href="sresults.php">Results</a><a href="registration.php">Registration</a><a href="itemPage.html">Item</a>  
 </div><div class="page"><!--//Standard Nav Bar, with links to other pages.-->
 <?php
