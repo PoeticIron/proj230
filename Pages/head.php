@@ -5,6 +5,11 @@
 </head><!--//Standard header, with reference to the javascript file with scripts, and the CSS stylesheet.-->
 <body>
 <div class="content">
+<div class = "Header">
+		<header>
+		<h1>JimmyBots Park Reviews</h1>
+		</header>
+</div>
 <div class="nav">
 <a href="search.php">Search</a><a href="sresults.php">Results</a><a href="registration.php">Registration</a><a href="itemPage.html">Item</a>  
 </div><div class="page"><!--//Standard Nav Bar, with links to other pages.-->
