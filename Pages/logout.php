@@ -1,4 +1,4 @@
-<?php
+<?php // USE SESSION_DESTROY() TO DELET THIS.
 include 'head.php';
 if($_SERVER["REQUEST_METHOD"]=="POST"){
 	    $_SESSION["Username"] = '';
