@@ -16,7 +16,7 @@ if($searchType == 'area'){
 	echo '<tr><td>Park Name</td><td>Street Name</td><td>Suburb</td><td>Distance in Kilometers</td>';
     foreach($query->fetchAll() as $row) {
     echo '<tr><td>';
-    echo $row['Name'];
+    echo "<a href='itemPage.php?varname=".$row['parkCode']."'>".$row['Name']."</a>";
     echo '</td><td>';
     echo $row['Street'];
     echo '</td><td>';
@@ -32,7 +32,7 @@ if($searchType == 'specific'){
 	if($query->execute(array($suburb,$name))){
     foreach($query->fetchAll() as $row) {
     echo '<tr><td>';
-    echo $row['Name'];
+    echo "<a href='itemPage.php?varname=".$row['parkCode']."'>".$row['Name']."</a>";
     echo '</td><td>';
     echo $row['Street'];
     echo '</td><td>';
