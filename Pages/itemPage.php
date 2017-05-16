@@ -1,5 +1,4 @@
 <?php
-    $db = new mysqli('123.211.108.180:3306', 'root', 'password', 'parks');
 	$park = $_GET['varname'];
 ?>
 
@@ -9,7 +8,7 @@
 
 <?php
 if ($park = $db->query("SELECT * FROM items WHERE parkCode = '".$park."'")) {
-	while ($row = $park->fetch_assoc()) {
+	while ($row = $park->fetch()) {
 echo '<body onload="showPosition(' . $row["latitude"] . ',' . $row["longitude"] . ')">'
 ?>
 		<div class="page">
