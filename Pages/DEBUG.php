@@ -19,4 +19,6 @@ include 'head.php'
  <li> TEST ACCOUNT - TestAccount (username), password1 
  <li> !ERROR MESSAGE ON ACCOUNT CREATION WITH ALREADY IN-USE USERNAME.
  <li> item page has double content divs
+ <li> confirm on register.
+ <li> stop searching by location before finding location (thanks nick)
  		</ul>
