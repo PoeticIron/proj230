@@ -1,13 +1,16 @@
 <?php
 include 'head.php';
+include '/../Operations/database.php';
 if($_SERVER["REQUEST_METHOD"]=="POST"){
-	$stmt = $db->prepare("SELECT username, firstname, lastname FROM users 
-		WHERE username = ? AND password = ?");
-if($stmt->execute(array($_POST["Username"], md5($_POST["Password"])))){
-    foreach($stmt->fetchAll() as $row) {
-    	$_SESSION["Username"] = $row[0];
-    	$_SESSION["FirstName"] = $row[1];
-    	$_SESSION["LastName"] = $row[2];
+	$stmt = $db->prepare("SELECT Username, FirstName, LastName, password FROM users 
+		WHERE username = ?");
+	$stmt->execute(array($_POST["Username"]));
+    $return = $stmt->fetch();
+    	if(password_verify($_POST["Password"], $return["password"])){
+    		print_r( $db->errorInfo());
+    	$_SESSION["Username"] = $return[0];
+    	$_SESSION["FirstName"] = $return[1];
+    	$_SESSION["LastName"] = $return[2];
 		header("Location: /proj230/pages/search.php"); 
 		exit();
 	}
@@ -21,6 +24,6 @@ if($stmt->execute(array($_POST["Username"], md5($_POST["Password"])))){
 	}
 }
 
-}
+
 
 ?>

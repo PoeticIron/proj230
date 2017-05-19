@@ -13,11 +13,11 @@ if(empty($_SESSION["Username"])){
 	<form name="login" action="login.php" method="post">
 	<input placeholder="Username" type="text" name="Username">
 	<input placeholder="Password" type="password" name="Password">
-	<input type="submit" value="Login"></form></div>';
+	<input type="submit" value="Login"></form></div></div>';
 }else{
 	echo '<div class="nav"><div class="login"><form name="logout" action="logout.php" method="post">
 	Welcome Back, '.$_SESSION["FirstName"].'
-	<input type="submit" value="Sign Out"></form></div>';
+	<input type="submit" value="Sign Out"></form></div></div>';
 }?>
 <div class = "Header">
 		<header>
@@ -25,8 +25,6 @@ if(empty($_SESSION["Username"])){
 		</header>
 </div>
 <div class="nav">
-<a href="search.php">Search</a><a href="sresults.php">Results</a><a href="registration.php">Registration</a><a href="itemPage.html">Item</a>  
+<a href="search.php">Search</a><a href="debug.php">DEBUG</a><a href="registration.php">Registration</a><a href="itemPage.html">Item</a>  
 </div><div class="page"><!--//Standard Nav Bar, with links to other pages.-->
-<?php
-$db = new PDO('mysql:host=localhost;dbname=parks;charset=utf8mb4', 'root', 'password');
-?>
+

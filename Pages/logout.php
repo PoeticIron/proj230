@@ -1,9 +1,8 @@
 <?php // USE SESSION_DESTROY() TO DELET THIS.
 include 'head.php';
 if($_SERVER["REQUEST_METHOD"]=="POST"){
-	    $_SESSION["Username"] = '';
-    	$_SESSION["FirstName"] = '';
-    	$_SESSION["LastName"] = '';
+	    session_unset();
+	    session_destroy();
     	header("Location: /proj230/pages/search.php");
 		exit();
     }

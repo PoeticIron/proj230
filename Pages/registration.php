@@ -1,13 +1,13 @@
 <?php 
 include 'head.php';
-//TO DO: check username and email in-usage,  salted hash brown passwords
-$username = $fname = $lname = $pass = $confpass = $email = $confemail = $phno = $day = $mth = $year = $tnc = "";
+include '../Operations/register.php';
+//TO DO: check username and email in-usage, salted hash brown passwords
 $userErr = $fnameErr = $lnErr = $passErr = $confPassErr = $emailErr = $confEmailErr = $phnoErr = $DOBErr = $TnCErr = "";
-$formVals = array($fname, $lname, $pass, $confpass, $email, $confemail, $phno, $day, $mth, $year, $tnc);
 $errVals = array($userErr , $fnameErr , $lnErr , $passErr , $confPassErr , $emailErr , $confEmailErr , $phnoErr , $DOBErr, $TnCErr);
-$postVals = array("Username", "First_Name", "Last_Name",  "Password", "Confirm_Password", "Email", "Confirm_Email", "Phone_Number", "DayB", "MthB", "YearB", "TNC");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
+
+	$postVals = array("Username", "First_Name", "Last_Name",  "Password", "Confirm_Password", "Email", "Confirm_Email", "Phone_Number", "DayB", "MthB", "YearB", "TNC");
 	for($i = 0; $i < 8; $i++){
 		if(empty($_POST[$postVals[$i]])){
 			$errVals[$i] = "Please fill in this field.";
@@ -49,38 +49,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 	if(empty($_POST["TNC"])){
 		$errVals[9] = "You must accept the Terms and Conditions to register.";
 	}
-
-
-function chckInp($val){
-	$val = trim($val);
-	$val = stripslashes($val);
-	$val = htmlspecialchars($val);
-	return $val;
-}
-$hasErrors = "false";
-foreach($errVals as $errVal){
-	if(!(empty($errVal))){
-		$hasErrors = "true";
+	$hasErrors = "false";
+	foreach($errVals as $errVal){
+		if(!(empty($errVal))){
+			$hasErrors = "true";
+		}
 	}
-}
 
 if($hasErrors == "false"){
-	$stmt = $db->prepare("INSERT INTO users(username, firstname, lastname, password, email, phno, dob) VALUES (?, ?, ?, ?, ?, ?, ?)");
-	$dateStr = (chckInp($_POST["YearB"]).'-'.chckInp($_POST["MthB"]).'-'.chckInp($_POST["DayB"]));
-	echo $dateStr;
-	$stmt->execute(array(
-		chckInp($_POST["Username"]),
-		chckInp($_POST["First_Name"]),
-		chckInp($_POST["Last_Name"]),
-		md5(chckInp($_POST["Password"])),
-		chckInp($_POST["Email"]),
-		chckInp($_POST["Phone_Number"]),
-		$dateStr
-		));
-$arr = $stmt->errorInfo();
-print_r($arr);
+	register();
 }
 }
+
+
 ?>
 <link href="/proj230/CSS/registration.css" rel="stylesheet">
 <div class="Title">

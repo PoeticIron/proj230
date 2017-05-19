@@ -1,14 +1,18 @@
 <?php
-	$park = $_GET['varname'];
+	$parkCode = $_GET['park'];
 ?>
 
 <html>
-<?php include 'head.php';
+<?php 
+include 'head.php';
+include '/../Operations/database.php';
+
 ?>
 
+
 <?php
-if ($park = $db->query("SELECT * FROM items WHERE parkCode = '".$park."'")) {
-	while ($row = $park->fetch()) {
+if ($park = $db->query("SELECT * FROM items WHERE parkCode = '".$parkCode."'")) {
+	$row = $park->fetch(); 
 echo '<body onload="showPosition(' . $row["latitude"] . ',' . $row["longitude"] . ')">'
 ?>
 		<div class="page">
@@ -29,8 +33,9 @@ echo '<body onload="showPosition(' . $row["latitude"] . ',' . $row["longitude"] 
 			</article>
 		</div>
 <?php 
-	}
+	
 }
 include 'reviews.php';
+
 ?>
 </html>
