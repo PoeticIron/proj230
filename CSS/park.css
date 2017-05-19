@@ -1,0 +1,60 @@
+div.parkName{
+	font-weight: bold;
+	line-height:30px;
+	padding-top: 25px;
+	font-size: 50px;
+	text-align: center;
+}
+
+div.parkStuff nav{
+	float: left;
+    max-width: 160px;
+    margin: 0;
+	padding-top: 25px;
+    padding-left: 40%;
+	transform: translate(-50%, 0);
+}
+
+div.parkStuff article{
+	transform: translate(-17%, 0);
+    padding-top: 45px;
+    overflow: hidden;
+	text-align: center;
+	font-size: 20px;
+}
+
+div.stars {
+  width: 270px;
+  display: inline-block;
+}
+ 
+input.star { display: none; }
+ 
+label.star {
+  float: right;
+  padding: 10px;
+  font-size: 36px;
+  color: #444;
+  transition: all .2s;
+}
+ div.reviews {
+	padding-top: 150px;
+	text-align: center;
+}
+input.star:checked ~ label.star:before {
+  content: url(/proj230/Images/goldstar2.png);
+  color: #EE6;
+  transition: all .25s;
+  	display: inline-block;
+	width:32px;
+	height:32px;
+}
+
+label.star:hover { transform: rotate(-120deg) scale(1.2); }
+ 
+label.star:before {
+	display: inline-block;
+	width:32px;
+	height:32px;
+  content: url(/proj230/Images/star.png);
+}

@@ -72,22 +72,6 @@ div.nav  a:hover {
 	text-decoration: underline;
 } 
 
-div.search {
-	margin: 10%;
-}
-div.search input[type=text] {
-	width: 45%;
-}
-
-div.search input[type=submit] {
-    padding:5px 15px; 
-    background:#ccc; 
-    border:0 none;
-    cursor:pointer;
-    -webkit-border-radius: 5px;
-    border-radius: 5px; 
-
-}
 
 div.page{
 	opacity: 0.9;
@@ -98,36 +82,6 @@ div.page{
 	padding: 5%;
     background-color: #f2f2f2;
 	padding-top: 5px;
-}
-
-div.parkName{
-	font-weight: bold;
-	line-height:30px;
-	padding-top: 25px;
-	font-size: 50px;
-	text-align: center;
-}
-
-div.parkStuff nav{
-	float: left;
-    max-width: 160px;
-    margin: 0;
-	padding-top: 25px;
-    padding-left: 40%;
-	transform: translate(-50%, 0);
-}
-
-div.parkStuff article{
-	transform: translate(-17%, 0);
-    padding-top: 45px;
-    overflow: hidden;
-	text-align: center;
-	font-size: 20px;
-}
-
-div.reviews {
-	padding-top: 150px;
-	text-align: center;
 }
 
 div.rev1 {
@@ -143,39 +97,6 @@ div.rev2 {
 div.rev3 {
 	padding: -2em;
 	border: 1px solid black;
-}
-
-div.stars {
-  width: 270px;
-  display: inline-block;
-}
- 
-input.star { display: none; }
- 
-label.star {
-  float: right;
-  padding: 10px;
-  font-size: 36px;
-  color: #444;
-  transition: all .2s;
-}
- 
-input.star:checked ~ label.star:before {
-  content: url(/proj230/Images/goldstar2.png);
-  color: #EE6;
-  transition: all .25s;
-  	display: inline-block;
-	width:32px;
-	height:32px;
-}
-
-label.star:hover { transform: rotate(-120deg) scale(1.2); }
- 
-label.star:before {
-	display: inline-block;
-	width:32px;
-	height:32px;
-  content: url(/proj230/Images/star.png);
 }
 
 
@@ -210,21 +131,3 @@ label.star:before {
 	font-size:80%;
 }
 
-table.results-table{
-	border-collapse: collapse;
-	border-spacing: 0px;
-	border-style:solid;
-	border-width:1px;
-	background-color:white;
-}
-table.results-table td{
-	border-style:solid;
-	border-width:1px;
-	text-transform:lowercase;
-	text-transform:capitalize;
-}
-table.results-table tr.head{
-	border-width:2px;
-	font-size:120%;
-	font-weight:bold;
-}

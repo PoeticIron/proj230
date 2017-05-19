@@ -1,0 +1,22 @@
+table.results-table{
+	border-collapse: collapse;
+	border-spacing: 0px;
+	border-style:solid;
+	border-width:1px;
+	background-color:white;
+}
+table.results-table td{
+	border-style:solid;
+	border-width:1px;
+	text-transform:lowercase;
+	text-transform:capitalize;
+}
+table.results-table tr.head{
+	border-width:2px;
+	font-size:120%;
+	font-weight:bold;
+}
+
+table.results-table a{
+	font-weight:bold;
+}
