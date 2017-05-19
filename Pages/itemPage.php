@@ -5,7 +5,7 @@
 <?php
 include 'head.php';
 include '/../Operations/database.php';
-if ($park = $db->query("SELECT * FROM items WHERE parkCode = '".$parkCode."'")) {
+if ($park = $db->query('SELECT items.id, Name, Street, suburb, avg(reviews.ReviewScore) as ReviewScore FROM items INNER JOIN reviews on reviews.parkID = items.id WHERE parkCode = "'.$parkCode.'" GROUP BY id;')) {
 	$row = $park->fetch(); 
 echo '<body onload="showPosition(' . $row["latitude"] . ',' . $row["longitude"] . ')">'
 ?>
@@ -22,7 +22,7 @@ echo '<body onload="showPosition(' . $row["latitude"] . ',' . $row["longitude"] 
 			<article>
 				<h3><b>Location:</b> <?php echo $row["Street"];?> ,<br> <?php echo $row["suburb"];?> <h3><br>
 				Average rating of the park:<br>
-					2 <img src="/proj230/Images/goldstar2.png">
+					<?php echo $row["ReviewScore"];?> <img src="/proj230/Images/goldstar2.png">
 			</article>
 		</div>
 <?php 
