@@ -5,7 +5,7 @@
 <?php
 include 'head.php';
 include '/../Operations/database.php';
-if ($park = $db->query('SELECT items.id, latitude, longitude, Name, Street, suburb, cast(avg(reviews.ReviewScore) as decimal(2,1)) as ReviewScore FROM items INNER JOIN reviews on reviews.parkID = items.id WHERE parkCode = "'.$parkCode.'" GROUP BY id;')) {
+if ($park = $db->query('SELECT items.id, latitude, longitude, Name, Street, suburb, cast(avg(reviews.ReviewScore) as decimal(2,1)) as ReviewScore FROM items LEFT JOIN reviews on reviews.parkID = items.id WHERE parkCode = "'.$parkCode.'" GROUP BY id;')) {
 	$row = $park->fetch(); 
 echo '<body onload="showPosition(' . $row["latitude"] . ',' . $row["longitude"] . ')">'
 ?>
@@ -22,7 +22,13 @@ echo '<body onload="showPosition(' . $row["latitude"] . ',' . $row["longitude"] 
 			<article>
 				<h3><b>Location:</b> <?php echo $row["Street"];?> ,<br> <?php echo $row["suburb"];?> <h3><br>
 				Average rating of the park:<br>
-					<?php echo $row["ReviewScore"];?> <img src="/proj230/Images/goldstar2.png">
+				<?php 
+				if(!empty($row['ReviewScore'])){
+					echo $row["ReviewScore"]; 
+				}
+				else{
+					echo '--';
+				}?><img src="/proj230/Images/goldstar2.png">
 			</article>
 		</div>
 		<div class="reviews">

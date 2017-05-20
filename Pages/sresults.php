@@ -20,9 +20,13 @@ $IncludeNoReview = isset($_POST["nonRev"]);
 <link rel="stylesheet" href="/proj230/CSS/results.css" type="text/css">
 <?php
 if($searchType == 'area'){
-	$query = $db->prepare("SELECT DISTINCT(parkCode), Street, Name, suburb, id, (ABS(ABS(latitude)+?) + ABS(ABS(longitude)-?))*111 as 'Distance' FROM items ORDER BY Distance ASC LIMIT 50;");
+	$query = $db->prepare("SELECT DISTINCT(parkCode), Street, Name, suburb, id, 
+        cast(avg(reviews.ReviewScore) as decimal(2,1)) as score, (ABS(ABS(latitude)+?) + ABS(ABS(longitude)-?))*111 as 'Distance' 
+        FROM items LEFT JOIN reviews ON items.id = reviews.parkID 
+        GROUP BY items.id 
+        ORDER BY Distance ASC LIMIT 50;");
 	if($query->execute(array($lat,$lon))){
-	echo '<tr class="head"><td>Park Name</td><td>Street Name</td><td>Suburb</td><td>Distance in Kilometers</td>';
+	echo '<tr class="head"><td>Park Name</td><td>Street Name</td><td>Suburb</td><td>Distance in Kilometers</td><td>Score</td>';
     foreach($query->fetchAll() as $row) {
     echo '<tr><td>';
     echo "<a href='itemPage.php?park=".$row['parkCode']."'>".ucfirst(strtolower($row['Name']))."</a>";
@@ -32,7 +36,15 @@ if($searchType == 'area'){
     echo ucfirst(strtolower($row['suburb']));
     echo '</td><td>';
     echo round($row['Distance'], 4);
-    echo '</td></tr>';
+    echo '</td><td><b>';
+    if(empty($row['score'])){
+    echo '--&nbsp&nbsp&nbsp<img src="/proj230/Images/goldstar2.png">';
+    }
+    else{
+    echo $row['score'].'<img src="/proj230/Images/goldstar2.png">';
+}
+    echo '</b></td></tr>';
+
 }
 }
 }
@@ -40,15 +52,16 @@ if($searchType == 'specific'){
     //SQL query to find based on park name or suburb.
 	$query = $db->prepare("SELECT items.parkCode, cast(avg(reviews.ReviewScore) as decimal(2,1)) as score, suburb, Street, Name FROM items join reviews On reviews.parkID = items.id WHERE items.suburb LIKE ? AND items.Name LIKE ?  GROUP BY id HAVING(avg(reviews.ReviewScore) >= ?) ORDER BY score DESC;");
     $NonReviewed = $db->prepare("SELECT items.parkCode, id, suburb, Street, Name FROM items WHERE suburb LIKE ? AND Name LIKE ? AND id NOT IN (SELECT parkID FROM reviews) LIMIT 40;");
+    echo '<tr class="head"><td>Park Name</td><td>Street Name</td><td>Score</td><td>Suburb</td>';
 	if($query->execute(array($suburb,$name,$minScore))){
     foreach($query->fetchAll() as $row) {
     echo '<tr><td>';
     echo "<a href='itemPage.php?park=".$row['parkCode']."'>".ucfirst(strtolower($row['Name']))."</a>";
     echo '</td><td>';
     echo ucfirst(strtolower($row['Street']));
-    echo '</td><td>';
+    echo '</td><td><b>';
     echo $row['score'].'<img src="/proj230/Images/goldstar2.png">';
-    echo '</td><td>';
+    echo '</b></td><td>';
     echo ucfirst(strtolower($row['suburb']));
     echo '</td></tr>';
 }
@@ -59,9 +72,9 @@ if($searchType == 'specific'){
     echo "<a href='itemPage.php?park=".$row['parkCode']."'>".ucfirst(strtolower($row['Name']))."</a>";
     echo '</td><td>';
     echo ucfirst(strtolower($row['Street']));
-    echo '</td><td>';
+    echo '</td><td><b>';
     echo '--&nbsp&nbsp&nbsp<img src="/proj230/Images/goldstar2.png">';
-    echo '</td><td>';
+    echo '</b></td><td>';
     echo ucfirst(strtolower($row['suburb']));
     echo '</td></tr>';
     }
