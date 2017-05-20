@@ -64,3 +64,15 @@ div.review{
 	border-style: inset;
 
 }
+div.parkDetails{
+	height:50%;
+}
+#mapdiv {
+	height: 100%;
+	width: 60%;
+	float:left;
+ }
+#parkinfo {
+	width:35%;
+	float:right;
+}

@@ -1,6 +1,10 @@
 <?php
-include 'head.php'
+include 'head.php';
+include '/../Operations/maps.php';
 ?>
+<link rel="stylesheet" href="/proj230/CSS/park.css" type="text/css">
+
+
 <b> CHECKLIST </b>
 <ul>
  	<li> PREVENT USER FROM SUBMITTING TWO REVIEWS - <b> SQL does this, but needs a notification. </b>
@@ -16,6 +20,7 @@ include 'head.php'
  <li> sorry message if no results found.
  <li> make the search results table use the entire width, or center it.
  <li> change nav bar to reflect links needed. Maybe move login there too.
+ <li> better formatting on item page and make it less SCREAMING
  		</ul>
  	<ul>
  	<h1>  <li> TEST ACCOUNT - TestAccount (username), password1  </li></h1>

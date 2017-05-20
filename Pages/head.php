@@ -25,6 +25,6 @@ if(empty($_SESSION["Username"])){
 		</header>
 </div>
 <div class="nav">
-<a href="search.php">Search</a><a href="debug.php">DEBUG</a><a href="registration.php">Registration</a><a href="itemPage.html">Item</a>  
+<a href="search.php">Search</a><a href="debug.php">DEBUG</a><a href="registration.php">Registration</a><a href="itemPage.php?park=D1061">Item</a>  
 </div><div class="page"><!--//Standard Nav Bar, with links to other pages.-->
 

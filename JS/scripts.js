@@ -69,8 +69,6 @@ function showPosition(latitude, longitude) {
     +latlon+"&zoom=14&size=400x300&sensor=false&key=AIzaSyCvlWDjG3g5Aim2WGLsYKBH0qKnBSaAE74";
     document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'> </img>";
 }
-//To use this code on your website, get a free API key from Google.
-//Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
 
 function showError(error) {
     switch(error.code) {

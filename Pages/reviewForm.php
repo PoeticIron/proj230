@@ -1,6 +1,5 @@
 
 <div class = "reviews">
-	<h1>User Reviews</h1>
 	<hr size="1"><br>
 	Write Your Review of This Park.<br><br>
 			<form method="post">
