@@ -5,7 +5,7 @@
 <?php
 include 'head.php';
 include '/../Operations/database.php';
-if ($park = $db->query('SELECT items.id, Name, Street, suburb, avg(reviews.ReviewScore) as ReviewScore FROM items INNER JOIN reviews on reviews.parkID = items.id WHERE parkCode = "'.$parkCode.'" GROUP BY id;')) {
+if ($park = $db->query('SELECT items.id, latitude, longitude, Name, Street, suburb, cast(avg(reviews.ReviewScore) as decimal(2,1)) as ReviewScore FROM items INNER JOIN reviews on reviews.parkID = items.id WHERE parkCode = "'.$parkCode.'" GROUP BY id;')) {
 	$row = $park->fetch(); 
 echo '<body onload="showPosition(' . $row["latitude"] . ',' . $row["longitude"] . ')">'
 ?>
@@ -25,11 +25,14 @@ echo '<body onload="showPosition(' . $row["latitude"] . ',' . $row["longitude"] 
 					<?php echo $row["ReviewScore"];?> <img src="/proj230/Images/goldstar2.png">
 			</article>
 		</div>
+		<div class="reviews">
+			<h1>User Reviews</h1>
+
 <?php 
 	
 }
 if(!(empty($_SESSION["Username"]))){
-include 'reviews.php';
+include 'reviewForm.php';
 	if($_SERVER["REQUEST_METHOD"]=="POST"){
 		include '/../Operations/review.php';
 		echo $_POST['Review'];
@@ -37,6 +40,9 @@ include 'reviews.php';
 	}
 }
 else{
-	echo 'Please sign in to post reviews.';
+	echo 'Please sign in to post reviews.<br>';
 }
+
+include 'reviews.php';
+
 ?>

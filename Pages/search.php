@@ -24,8 +24,19 @@ if($query->execute()){
 </select>
 <input type="submit" value="Search By Name and Suburb" onclick="document.getElementById('stype').value='specific'"><br>
 </div>
-<div class="searchType"> <div class="title">Search By Location, Or... </div><br>
+<div class="searchType"> <div class="title">Search By Location </div><br>
 <button type="button" onclick="getLocation();">Find My Location </button>
 <input type='submit' onclick="document.getElementById('stype').value='area'" value="Use My Location">
 <div id="mapInfo"></div><br><div id="mapholder"></div>
 </div>
+<div class="searchType"> <div class="title">Filter By Review Score </div><br>
+Only Include Parks with a Reviewer's Score of at Least:
+<select name="minScore" form="searchform">
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>	
+	<option value="5">5</option>
+	</select>
+	<br> Include non-reviewed parks: 
+	<input type="checkbox" name="nonRev" checked="true">

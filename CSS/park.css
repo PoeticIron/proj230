@@ -58,3 +58,9 @@ label.star:before {
 	height:32px;
   content: url(/proj230/Images/star.png);
 }
+
+div.review{
+	background:#cbcbcb;
+	border-style: inset;
+
+}
