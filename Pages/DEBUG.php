@@ -15,12 +15,10 @@ include '/../Operations/maps.php';
  <li> !ERROR MESSAGE ON ACCOUNT CREATION WITH ALREADY IN-USE USERNAME.
  <li> confirm on register.
  <li> stop searching by location before finding location (thanks nick)
- <li> less decimal places on average returns from SQL.
  <li> redirect to current page on successful login.
  <li> sorry message if no results found.
  <li> make the search results table use the entire width, or center it.
  <li> change nav bar to reflect links needed. Maybe move login there too.
- <li> better formatting on item page and make it less SCREAMING
  		</ul>
  	<ul>
  	<h1>  <li> TEST ACCOUNT - TestAccount (username), password1  </li></h1>
@@ -36,3 +34,5 @@ include '/../Operations/maps.php';
  	 <li> item page has double content divs <b> done </b>
  <li> review score on location search. <b> done </b>
  <li> results column titles. <b> done </b>
+ <li> better formatting on item page and make it less SCREAMING <b> done </b>
+ <li> less decimal places on average returns from SQL. <b> done </b>
