@@ -84,4 +84,6 @@ else{
 }
 //Finally, display the reviews of the park.
 include 'reviews.php';
+//And the sitewide footer.
+include 'footer.php';
 ?>

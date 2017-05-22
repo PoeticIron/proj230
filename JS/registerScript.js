@@ -1,3 +1,4 @@
+//Deprecated client-side input checking. Since JS input validation can be ignored, it's no longer used, and error messages are passed to the client through PHP.
 function registerCheck(doc) {
     var fn = document.forms["registerForm"]["FName"].value;
     var ln = document.forms["registerForm"]["LName"].value;

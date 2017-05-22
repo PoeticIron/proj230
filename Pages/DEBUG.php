@@ -13,7 +13,9 @@ include '/../Operations/maps.php';
  <li> sorry message if no results found.
  <li> make the search results table use the entire width, or center it.
  <li> metadata!
- <li> COMMENTING: PROGRESS: ALL PAGES COMMENTED. ALL OPERATIONS COMMENTED.
+ <li> fancy hint for 'please sign up' with reviewed/unreviewed park numbers. maybe under site title.
+ <li> MOVE THE T&C CHECKBOX TO THE RIGHT.
+ <li> COMMENTING: PROGRESS: ALL PAGES COMMENTED. ALL OPERATIONS COMMENTED. ALL JS COMMENTED.
  		</ul>
  	<ul>
  	<h1>  <li> TEST ACCOUNT - TestAccount (username), password1  </li></h1>

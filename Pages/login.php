@@ -31,3 +31,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <input type="submit" value="Login">
 
 
+<?php
+//Include the sitewide footer.
+include 'footer.php';
+?>

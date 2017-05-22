@@ -1,4 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400);
+/*
+* Standard, site-wide CSS styling.
+*/
+
+/*
+* Entire page has background image of trees, as well as a minimum width of 1024pix.
+*/
 body {
 	background-image: url("http://i.imgur.com/4WXZQWT.jpg");
 	background-color: #DDD;
@@ -9,10 +16,16 @@ body {
 	float: center;
 	width:100%;
 }
+/*
+Actual page content doesn't take up entire page; 5% margin on each side.
+*/
 div.content{
 	margin-left:5%;
 	margin-right:5%;
 }
+/*
+Title field is large, centered and is obviously a sitewide title.
+*/
 header {
     height: 90px;
     line-height:90px;
@@ -20,6 +33,9 @@ header {
 	background-color: #093;
 	color: white; 
 }
+/*
+Footer div - always at the bottom of user's screen, moves with scrolling.
+*/
 div.footer{
 	line-height:150%;
 	position: fixed;
@@ -32,6 +48,8 @@ div.footer{
 	background-color:#C6C6C6;
 	text-align:center;
 }
+/*
+Nav Bar styling - light green background, links stand out. */
 div.nav {
 	text-align: center;
 	margin: 0px;
@@ -43,14 +61,8 @@ div.nav {
 	width: auto;
 	right: 50%;
 } 
-
-div.login{
-	color: #222;
-	margin:0;
-	padding:0;
-	background-color: #CFC;
-}
-
+/*
+Links themselves are dark green buttons with white text for high contrast, while retaining 'green' theme. */
 div.nav a {
 	height: 40px;
 	padding-top: 6px;
@@ -66,12 +78,13 @@ div.nav a {
 	border-width: 4px;
 	text-decoration: none;
 } 
+/* buttons light up on hover. */
 div.nav  a:hover {
 	background-color: #ABA;
 	text-decoration: underline;
 } 
 
-
+/* 'Page' Div represents everything after navbar. More margin on sides, slightly transparent so the background image is still visible.*/
 div.page{
 	opacity: 0.9;
 	margin-left: 5%;
@@ -82,43 +95,19 @@ div.page{
     background-color: #f2f2f2;
 	padding-top: 5px;
 }
-
-div.rev1 {
-	padding: -2em;
-	border: 1px solid black;
-}
-
-div.rev2 {
-	padding: -2em;
-	border: 1px solid black;
-}
-
-div.rev3 {
-	padding: -2em;
-	border: 1px solid black;
-}
-
-
-
-
+/* Standard appearance for form divs. */
 .form {
 	font-weight: bold;
 	line-height:30px;
 	margin-left:1.2%;
 }
-.forminfo{
-	font-weight: normal;
-	font-style:italic;
-	font-size:90%;
-}
+/* Inputs on form fields are sent to the right so that the left can be used to name these inputs. */
 .field input{
 	float:right;
 	margin-right:10%;
 	width:40%;
 }
-.rightcontent input{
-	width: 100%;
-}
+/* Specific Page Title, and subtitle if needed. */
 .Title{
 	font-size:160%;
 	text-align:center;

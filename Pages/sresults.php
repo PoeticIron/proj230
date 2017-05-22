@@ -22,6 +22,8 @@ $IncludeNoReview = isset($_POST["nonRev"]);
 $zoom = 14;
 ?>
 <link rel="stylesheet" href="/proj230/CSS/results.css" type="text/css">
+<div class="Title">
+Your Search Results<br></div>
 <?php
 //Perform Area-based search
 if($searchType == 'area'){
@@ -44,7 +46,7 @@ if($searchType == 'area'){
 	echo '<tr class="head"><td>Park Name</td><td>Street Name</td><td>Suburb</td><td>Distance in Kilometers</td><td>Score</td>';
     ?>
         <!-- Map generation - call script, run initmap() with latitude and longitude specified.-->
-        <div id="mapdiv"></div>
+        <div id="mapdiv"></div><br>
         <script type="text/javascript" src="\proj230\JS\mapScripts.js"></script>
         <?php echo'<script> initSearchMap(' . $lat . ',' . $lon .','.$zoom.')</script>'; 
         //For each result found, add a marker to the map with the coordinates and Name specified (this script also adds links to markers). Then, add the values to the table.
@@ -93,7 +95,7 @@ if($searchType == 'specific'){
 	if($query->execute(array($suburb,$name,$minScore))){
         ?>
      <!-- Map generation - call script, run initmap() with latitude and longitude from the first result.-->
-        <div id="mapdiv"></div>
+        <div id="mapdiv"></div><br>
         <script type="text/javascript" src="\proj230\JS\mapScripts.js"></script>
         <?php 
         $firstResult = $query->fetch();
@@ -134,4 +136,6 @@ if($searchType == 'specific'){
 }
 }
 echo '</table>';//Close the table.
+//Include the sitewide footer.
+include 'footer.php';
 ?>

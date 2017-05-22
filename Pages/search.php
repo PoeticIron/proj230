@@ -6,11 +6,13 @@ include '/../Operations/database.php';
 ?>
 <link rel="stylesheet" href="/proj230/CSS/search.css" type="text/css">
 <script type="text/javascript" src="\proj230\JS\mapScripts.js"></script>
+<div class="Title">
+Search The Park Database<br></div>
 <!-- Fetch the CSS specific to this page. -->
 <form method='post' action='sresults.php' id="searchform">
 <div class="searchType"> <div class="title">Search By Name and Suburb, Or... </div><br>
 <!-- Create the form for searching, then create the first searchType subdivision for Name and Suburb searches. -->
-<input type="text" name="Name">
+<input type="text" placeholder="Enter a Park Name" name="Name">
 <input type="hidden" name="lat"id="lat"><input type="hidden" id="lon"name="lon"><input type="hidden" id="stype" name="stype">
 <!-- Hidden inputs allow passing values not manually entered to the search results page. -->
 <select name="Suburb" form="searchform">
@@ -53,3 +55,7 @@ Only Include Parks with a Reviewer's Score of at Least:
 	<br> Include non-reviewed parks: 
 	<!-- simple boolean to select or deselect non-reviewed (null score) parks.-->
 	<input type="checkbox" name="nonRev" checked="true">
+	<?php
+//Include the sitewide footer.
+include 'footer.php';
+?>

@@ -102,16 +102,21 @@ foreach($values as $value){
 	}
 	echo '<input type="'.$inputType.'" value = "';
 	if($_SERVER["REQUEST_METHOD"]=="POST"){echo $_POST[$postVals[$i]]; };
-	echo'" name="'.$value.'"><div class="errmsg">'.$errVals[$i].'</div>';
+	echo'" name="'.$value.'"><div class="errmsg">'.$errVals[$i].'</div></div>';
 	$i++;
 }
 ?>
 <!-- these fields could not be included in the loop, so declare them here. PHP code is for displaying errors, and replacing values after a POST attempt.-->
+<div class="field">
 <div class="tripleNumber">Date of Birth:
 	<input type="number" name="YearB" placeholder="Year" 	value=<?php if($_SERVER["REQUEST_METHOD"]=="POST"){echo $_POST["YearB"];}?>>
 	<input type="number" class="date" placeholder ="Month" name="MthB" value=<?php if($_SERVER["REQUEST_METHOD"]=="POST"){echo $_POST["MthB"];}?>>
 	<input type="number" class="date" placeholder = "Day" name="DayB" value=<?php if($_SERVER["REQUEST_METHOD"]=="POST"){echo $_POST["DayB"];}?>>
 	<div class="errmsg"><?php echo $errVals[8]; ?></div>
-</div>
-<div class="field">I Have Read and Accept the Terms & Conditions: <input name="TNC" type="checkbox"><div class="errmsg"><?php echo $errVals[9]; ?></div>
-<div class="field"><input type="submit" value="Register">
+</div></div>
+<div class="field">I Have Read and Accept the Terms & Conditions: <input name="TNC" type="checkbox"><div class="errmsg"><?php echo $errVals[9]; ?></div></div>
+<div class="field"><input type="submit" value="Register"></div></form></div>
+<?php
+//Include the sitewide footer.
+include 'footer.php';
+?>

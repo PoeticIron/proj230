@@ -39,13 +39,17 @@ function addMarker(latitude, longitude, parkName, parkCode){
 }
 
 function getLocation(){
+	//Just grab the user's location, then pass it to the DisplayMyPosition function.
     navigator.geolocation.getCurrentPosition(displayMyPosition);
 }
 function displayMyPosition(position){
+	//Initialize a new map with the user's coordinates.
     initmap(position.coords.latitude, position.coords.longitude, "Your Location");
+    //Display the user's coordinates on the page, and setup the form values with these as well.
     document.getElementById('mapInfo').innerHTML= "Your Coordinates: \n Latitude: " + position.coords.latitude + ", Longitude: " + position.coords.longitude;
     document.getElementById('lat').value= position.coords.latitude;
     document.getElementById('lon').value=position.coords.longitude;
+    //make the map and the 'search by location' button visible.
     document.getElementById('locationSubmit').hidden=false;
     document.getElementById('mapdiv').hidden=false;
 }
