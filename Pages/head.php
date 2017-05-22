@@ -1,30 +1,40 @@
 <?php
+//Continue the current session.
 session_start();
 ?>
 <head>
+<!-- All pages get the scripts.js and the sitewide CSS standard. -->
 <script type="text/javascript" src="\proj230\JS\scripts.js"></script>
 <link href="/proj230/CSS/sitewide.css" rel="stylesheet">
-</head><!--//Standard header, with reference to the javascript file with scripts, and the CSS stylesheet.-->
+</head>
 <body>
+<!-- Also, all pages content is placed within the 'content' div. -->
 <div class="content">
-<?php 
-if(empty($_SESSION["Username"])){
-	echo'<div class="nav"><div class="login">
-	<form name="login" action="login.php" method="post">
-	<input placeholder="Username" type="text" name="Username">
-	<input placeholder="Password" type="password" name="Password">
-	<input type="submit" value="Login"></form></div></div>';
-}else{
-	echo '<div class="nav"><div class="login"><form name="logout" action="logout.php" method="post">
-	Welcome Back, '.$_SESSION["FirstName"].'
-	<input type="submit" value="Sign Out"></form></div></div>';
-}?>
+
+<!-- Standard sitewide Title bar and navbar. -->
 <div class = "Header">
 		<header>
-		<h1>JimmyBots Park Reviews</h1>
+		<h1>Proj230 Park Reviews</h1>
 		</header>
 </div>
 <div class="nav">
-<a href="search.php">Search</a><a href="debug.php">DEBUG</a><a href="registration.php">Registration</a><a href="itemPage.php?park=D1061">Item</a>  
+
+<?php 
+if(empty($_SESSION["Username"])){
+	//If the user is not signed in, display the login form at the top of the page.
+	echo'
+	<form name="login" action="login.php" method="post">
+	<input placeholder="Username" type="text" name="Username">
+	<input placeholder="Password" type="password" name="Password">';
+	//Post the current url of whatever page we're on right now as well.
+	echo '<input type="hidden" value="'.$_SERVER['REQUEST_URI'].'"" name = "url">';
+	echo '<input type="submit" value="Login"></form>';
+}else{
+	//Otherwise, show that they are logged in with a nice message, and display the logout button.
+	echo '<form name="logout" action="logout.php" method="post">
+	Welcome Back, '.$_SESSION["FirstName"].'
+	<input type="submit" value="Sign Out"></form>';
+}?>
+<a href="search.php">Search for Parks</a><a href="DEBUG.php">DEBUG </a><a href="registration.php">Register An Account</a><a href="itemPage.php?park=D1061">View an Example Park</a>  
 </div><div class="page"><!--//Standard Nav Bar, with links to other pages.-->
 

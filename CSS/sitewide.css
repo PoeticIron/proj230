@@ -1,7 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400);
 body {
 	background-image: url("http://i.imgur.com/4WXZQWT.jpg");
-	background-repeat: no-repeat;
 	background-color: #DDD;
 	background-size: 1920px, 1080px;
 	min-width: 1024px;
@@ -100,10 +99,7 @@ div.rev3 {
 }
 
 
-.errmsg{
-	color: #E66;
-	font-size:90%;
-}
+
 
 .form {
 	font-weight: bold;

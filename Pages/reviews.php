@@ -1,5 +1,7 @@
 <?php
+//Get the database code.
 include '/../Operations/database.php';
+//Find the last 5 reviews for the park requested, and display these in separate 'review' divs, with their score, reviewer, and text.
 $stmt = $db->prepare("SELECT ReviewScore, reviewer, ReviewText FROM reviews WHERE parkID IN
 (SELECT id FROM items WHERE parkCode = '".$parkCode."') LIMIT 5;");
 $stmt->execute();

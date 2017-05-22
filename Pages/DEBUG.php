@@ -7,18 +7,13 @@ include '/../Operations/maps.php';
 
 <b> CHECKLIST </b>
 <ul>
- 	<li> PREVENT USER FROM SUBMITTING TWO REVIEWS - <b> SQL does this, but needs a notification. </b>
- <li> BETTER MAP INTEGRATION - ITEM AND SEARCH PAGES.
  <li> MOVE THINGS TO THEIR OWN PHP FILES - PARTICULARLY DATABASE AND PROCESSING THINGS.
  <li> IMPROVE CSS - MOVE PAGE SPECIFIC THINGS TO SEPARATE CSS FILES. COMMENT CSS. 
  <li> REMOVE THIS PAGE.
- <li> !ERROR MESSAGE ON ACCOUNT CREATION WITH ALREADY IN-USE USERNAME.
- <li> confirm on register.
- <li> stop searching by location before finding location (thanks nick)
- <li> redirect to current page on successful login.
  <li> sorry message if no results found.
  <li> make the search results table use the entire width, or center it.
- <li> change nav bar to reflect links needed. Maybe move login there too.
+ <li> metadata!
+ <li> COMMENTING: PROGRESS: ALL PAGES COMMENTED. ALL OPERATIONS COMMENTED.
  		</ul>
  	<ul>
  	<h1>  <li> TEST ACCOUNT - TestAccount (username), password1  </li></h1>
@@ -36,3 +31,11 @@ include '/../Operations/maps.php';
  <li> results column titles. <b> done </b>
  <li> better formatting on item page and make it less SCREAMING <b> done </b>
  <li> less decimal places on average returns from SQL. <b> done </b>
+ <li> BETTER MAP INTEGRATION - ITEM AND SEARCH PAGES. <b> done </b>
+ <li> stop searching by location before finding location (thanks nick) <b> done </b>
+ <li> !ERROR MESSAGE ON ACCOUNT CREATION WITH ALREADY IN-USE USERNAME.
+ 	<li> PREVENT USER FROM SUBMITTING TWO REVIEWS - <b> SQL does this, but needs a notification. </b>
+ <li> make the background image loop.
+ <li> change nav bar to reflect links needed. Maybe move login there too.
+ <li> confirm on register.
+ <li> redirect to current page on successful login. - doesnt work with search results, never will, oh bloody well.

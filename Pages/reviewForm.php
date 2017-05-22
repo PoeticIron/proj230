@@ -1,4 +1,4 @@
-
+<!-- Simple form for reviews. has a text input field for text content, and a nice-looking star display which lets the user select a score -->
 <div class = "reviews">
 	<hr size="1"><br>
 	Write Your Review of This Park.<br><br>
