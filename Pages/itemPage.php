@@ -6,6 +6,8 @@ if (!isset($_GET["park"])){
 }
 //Get the ParkCode supplied from the search results page, and include both Maps and Database code.
 $parkCode = $_GET['park'];
+//Initialize a parkName variable for use later.
+$parkName = "";
 include 'head.php';
 include '/../Operations/maps.php';
 include '/../Operations/database.php';
@@ -16,7 +18,7 @@ if ($park = $db->query('SELECT items.id, latitude, longitude, Name, Street, subu
 						GROUP BY id;')) 
 	{//Note that this is unclosed; if the SQL query is unsuccessful, nothing should be displayed - better than throwing lots of errors.
 	$row = $park->fetch(); 
-	
+	$parkName = ucwords(strtolower($row["Name"]));
 ?>
 <!-- Grab the page-specific CSS, and begin page layout -->
 <link rel="stylesheet" href="/proj230/CSS/park.css" type="text/css">
@@ -26,15 +28,19 @@ if ($park = $db->query('SELECT items.id, latitude, longitude, Name, Street, subu
 				echo (ucwords(strtolower($row["Name"])));
 			?>
 		</div><br>
-		
+
+
 		<div class = "parkDetails">
 			<!-- Map generation - call script, run initmap() with latitude and longitude specified.-->
 				<div id="mapdiv"></div>
 				<script type="text/javascript" src="\proj230\JS\mapScripts.js"></script>
 				<?php //Display park details from the SQL query.
-				echo'<script> initmap(' . $row["latitude"] . ',' . $row["longitude"] . ',"'.ucwords(strtolower($row["Name"])).'")</script>'; ?>
+				echo'<script> initmap(' . $row["latitude"] . ',' . $row["longitude"] . ',"'.$parkName.'")</script>'; ?>
 				<div id="parkInfo">
-				<h3><b>Location:</b> <?php echo (ucwords(strtolower($row["Street"])));?> ,<br> <?php echo (ucwords(strtolower($row["suburb"])));?> <h3><br>
+				<h3><b>Location:</b> 
+				<!-- Place microdata is included here, for Street Address and Locality (suburb). -->
+				<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+					<?php echo '<span itemprop="streetAddress">'.(ucwords(strtolower($row["Street"]))).'</span>';?>,<br> <?php echo '<span itemprop="addressLocality">'.(ucwords(strtolower($row["suburb"]))).'</span>';?> <h3><br>
 				Average Rating of the Park:<br>
 				<?php 
 				//If the park has a reviewScore, display it.

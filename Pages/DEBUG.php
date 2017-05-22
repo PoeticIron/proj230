@@ -12,10 +12,9 @@ include '/../Operations/maps.php';
  <li> REMOVE THIS PAGE.
  <li> sorry message if no results found.
  <li> make the search results table use the entire width, or center it.
- <li> metadata!
- <li> fancy hint for 'please sign up' with reviewed/unreviewed park numbers. maybe under site title.
+ <li> the search page map is fucky.
  <li> MOVE THE T&C CHECKBOX TO THE RIGHT.
- <li> COMMENTING: PROGRESS: ALL PAGES COMMENTED. ALL OPERATIONS COMMENTED. ALL JS COMMENTED.
+ <li> COMMENTING: PROGRESS: ALL PAGES COMMENTED. ALL OPERATIONS COMMENTED. ALL JS COMMENTED. JUST NEED TO COMMENT PAGE-SPECIFIC CSS.
  		</ul>
  	<ul>
  	<h1>  <li> TEST ACCOUNT - TestAccount (username), password1  </li></h1>
@@ -41,3 +40,5 @@ include '/../Operations/maps.php';
  <li> change nav bar to reflect links needed. Maybe move login there too.
  <li> confirm on register.
  <li> redirect to current page on successful login. - doesnt work with search results, never will, oh bloody well.
+ <li> fancy hint for 'please sign up' with reviewed/unreviewed park numbers. maybe under site title.
+ <li> metadata!

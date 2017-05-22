@@ -19,7 +19,17 @@ session_start();
 <div class="nav">
 
 <?php 
+//Database queries; Both queries are very similar; they count the number of entries in the items and reviews table.
+//This number is passed to the 'please sign up' message above the login screen for people who haven't signed up.
+include '/../Operations/database.php';
+$parksQuery = $db->prepare('SELECT COUNT(id) FROM items');
+$parksQuery->execute();
+$parks = $parksQuery->fetch()['COUNT(id)'];
+$reviewsQuery = $db->prepare('SELECT COUNT(parkID) FROM reviews');
+$reviewsQuery->execute();
+$reviews = $reviewsQuery->fetch()['COUNT(parkID)'];
 if(empty($_SESSION["Username"])){
+	echo 'Consider signing up for an account; currently, our database has <b>'.$reviews.'</b> reviews for <b>'.$parks.'</b> parks, and you can help create more!';
 	//If the user is not signed in, display the login form at the top of the page.
 	echo'
 	<form name="login" action="login.php" method="post">

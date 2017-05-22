@@ -51,7 +51,7 @@ if($searchType == 'area'){
         <?php echo'<script> initSearchMap(' . $lat . ',' . $lon .','.$zoom.')</script>'; 
         //For each result found, add a marker to the map with the coordinates and Name specified (this script also adds links to markers). Then, add the values to the table.
     foreach($query->fetchAll() as $row) {
-    echo'<script> addMarker(' . $row['latitude'] . ',' . $row['longitude'] .',"'. ucwords(strtolower($row['Name'])) . '","' .$row["parkCode"].'")</script>'; 
+    echo'<script> addMarker(' . $row['latitude'] . ',' . $row['longitude'] .',"'. ucwords(strtolower($row['Name'])).'; rating: '.$row['score'] . '","' .$row["parkCode"].'")</script>'; 
     echo '<tr><td>';
     echo "<a href='itemPage.php?park=".$row['parkCode']."'>".ucfirst(strtolower($row['Name']))."</a>";
     echo '</td><td>';
@@ -103,7 +103,7 @@ if($searchType == 'specific'){
     $query->execute();
     foreach($query->fetchAll() as $row) {//Execute the first query and loop through results
         //Add a map marker for each result, then a table entry, same as above.
-        echo'<script> addMarker(' . $row['latitude'] . ',' . $row['longitude'] .',"'. ucwords(strtolower($row['Name'])) . '","' .$row["parkCode"].'")</script>'; 
+        echo'<script> addMarker(' . $row['latitude'] . ',' . $row['longitude'] .',"'. ucwords(strtolower($row['Name'])).'; rating: '.$row['score'] . '","' .$row["parkCode"].'")</script>'; 
         echo '<tr><td>';
         echo "<a href='itemPage.php?park=".$row['parkCode']."'>".ucfirst(strtolower($row['Name']))."</a>";
         echo '</td><td>';
@@ -122,7 +122,7 @@ if($searchType == 'specific'){
             echo'<script> initSearchMap('.$firstResult["latitude"].','. $firstResult["longitude"].','.$zoom.');</script>'; 
         }
     foreach($NonReviewed->fetchAll() as $row){
-        echo'<script> addMarker(' . $row['latitude'] . ',' . $row['longitude'] .',"'. ucwords(strtolower($row['Name'])) . '","' .$row["parkCode"].'")</script>'; 
+        echo'<script> addMarker(' . $row['latitude'] . ',' . $row['longitude'] .',"'. ucwords(strtolower($row['Name'])).'; rating: --' . '","' .$row["parkCode"].'")</script>'; 
         echo '<tr><td>';
         echo "<a href='itemPage.php?park=".$row['parkCode']."'>".ucfirst(strtolower($row['Name']))."</a>";
         echo '</td><td>';

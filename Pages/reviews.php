@@ -6,10 +6,12 @@ $stmt = $db->prepare("SELECT ReviewScore, reviewer, ReviewText FROM reviews WHER
 (SELECT id FROM items WHERE parkCode = '".$parkCode."') LIMIT 5;");
 $stmt->execute();
 foreach($stmt->fetchAll() as $row) {
-		echo '<div class="review">';
-		echo '<b> Reviewed By: '.$row['reviewer'].'</b><br>';
-		echo $row["ReviewText"];
-		echo '<br>Review Score: '.$row['ReviewScore'].'<img src="/proj230/Images/goldstar2.png">';
+		//Review Microdata included here.
+		echo '<div class="review" itemscope itemtype="http://data-vocabulary.org/Review">';
+		echo '<div hidden = true itemprop="itemreviewed">'.$parkName.'</div>';
+		echo '<b> Reviewed By: <div itemprop="reviewer">'.$row['reviewer'].'</div></b><br>';
+		echo '<div itemprop="description">'.$row["ReviewText"].'</div>';
+		echo '<br>Review Score: <div itemprop = "rating">'.$row['ReviewScore'].'</div><img src="/proj230/Images/goldstar2.png">';
 		echo '</div>';
 }
 
