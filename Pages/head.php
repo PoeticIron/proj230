@@ -44,6 +44,6 @@ if(empty($_SESSION["Username"])){
 	Welcome Back, '.$_SESSION["FirstName"].'
 	<input type="submit" value="Sign Out"></form>';
 }?>
-<a href="search.php">Search for Parks</a><a href="DEBUG.php">DEBUG </a><a href="registration.php">Register An Account</a><a href="itemPage.php?park=D1061">View an Example Park</a>  
+<a href="search.php">Search for Parks</a><a href="registration.php">Register An Account</a><a href="itemPage.php?park=D1061">View an Example Park</a>  
 </div><div class="page"><!--//Standard Nav Bar, with links to other pages.-->
 
