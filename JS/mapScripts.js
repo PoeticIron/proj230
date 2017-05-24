@@ -13,7 +13,7 @@ function initmap(latitude, longitude, parkName) {
 	var osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 20, attribution: osmAttrib});		
 
 	// Create the map at the designated coordinates, at ideal zoom.
-	map.setView(new L.LatLng(latitude, longitude),16);
+	map.setView(new L.LatLng(latitude, longitude),14);
 	map.addLayer(osm);
 	var marker = L.marker([latitude, longitude], {title: parkName}).addTo(map);
 }
@@ -52,4 +52,5 @@ function displayMyPosition(position){
     //make the map and the 'search by location' button visible.
     document.getElementById('locationSubmit').hidden=false;
     document.getElementById('mapdiv').hidden=false;
+    map._onResize()
 }

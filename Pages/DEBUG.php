@@ -7,13 +7,9 @@ include '/../Operations/maps.php';
 
 <b> CHECKLIST </b>
 <ul>
- <li> MOVE THINGS TO THEIR OWN PHP FILES - PARTICULARLY DATABASE AND PROCESSING THINGS.
- <li> IMPROVE CSS - MOVE PAGE SPECIFIC THINGS TO SEPARATE CSS FILES. COMMENT CSS. 
+
  <li> REMOVE THIS PAGE.
  <li> sorry message if no results found.
- <li> make the search results table use the entire width, or center it.
- <li> the search page map is fucky.
- <li> MOVE THE T&C CHECKBOX TO THE RIGHT.
  <li> COMMENTING: PROGRESS: ALL PAGES COMMENTED. ALL OPERATIONS COMMENTED. ALL JS COMMENTED. JUST NEED TO COMMENT PAGE-SPECIFIC CSS.
  		</ul>
  	<ul>
@@ -42,3 +38,8 @@ include '/../Operations/maps.php';
  <li> redirect to current page on successful login. - doesnt work with search results, never will, oh bloody well.
  <li> fancy hint for 'please sign up' with reviewed/unreviewed park numbers. maybe under site title.
  <li> metadata!
+ <li> MOVE THE T&C CHECKBOX TO THE RIGHT.
+ <li> make the search results table use the entire width, or center it.
+ <li> MOVE THINGS TO THEIR OWN PHP FILES - PARTICULARLY DATABASE AND PROCESSING THINGS.
+ <li> IMPROVE CSS - MOVE PAGE SPECIFIC THINGS TO SEPARATE CSS FILES. COMMENT CSS. 
+  <li> the search page map is fucky.

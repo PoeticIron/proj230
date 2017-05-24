@@ -12,7 +12,7 @@ input[type=number]{
 	-moz-appearance:textfield;
 }
 input[type=checkbox]{
-	margin-right: calc(50% - 13px);
+	width:4%;
 }
 .errmsg{
 	color: #E66;

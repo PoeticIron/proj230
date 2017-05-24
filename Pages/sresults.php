@@ -4,7 +4,7 @@ include '/../Operations/maps.php';
 include '/../Operations/database.php';
 //include all necessary files, and the standard navbar etc. 
 echo '<div class="results-table">';
-echo '<table class="results-table">';
+echo '<table id="resTable" class="results-table">';
 //Commence table construction
 if(!($_SERVER["REQUEST_METHOD"]=="POST")){
     //If the user got to this page without a POST request, they shouldn't be here. Send them back to the search page.
@@ -22,7 +22,7 @@ $IncludeNoReview = isset($_POST["nonRev"]);
 $zoom = 14;
 ?>
 <link rel="stylesheet" href="/proj230/CSS/results.css" type="text/css">
-<div class="Title">
+<div id="Title" class="Title">
 Your Search Results<br></div>
 <?php
 //Perform Area-based search
@@ -136,6 +136,8 @@ if($searchType == 'specific'){
 }
 }
 echo '</table>';//Close the table.
+echo '<script type="text/javascript" src="\proj230\JS\resultScript.js"></script>';
+echo '<script> checkTable() </script>';
 //Include the sitewide footer.
 include 'footer.php';
 ?>

@@ -114,7 +114,7 @@ foreach($values as $value){
 	<input type="number" class="date" placeholder = "Day" name="DayB" value=<?php if($_SERVER["REQUEST_METHOD"]=="POST"){echo $_POST["DayB"];}?>>
 	<div class="errmsg"><?php echo $errVals[8]; ?></div>
 </div></div>
-<div class="field">I Have Read and Accept the Terms & Conditions: <input name="TNC" type="checkbox"><div class="errmsg"><?php echo $errVals[9]; ?></div></div>
+<div class="field">I Have Read and Accept the Terms and Conditions<input name="TNC" type="checkbox"><div class="errmsg"><?php echo $errVals[9]; ?></div></div>
 <div class="field"><input type="submit" value="Register"></div></form></div>
 <?php
 //Include the sitewide footer.
